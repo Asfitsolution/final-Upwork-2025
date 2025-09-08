@@ -1165,8 +1165,24 @@
         // Initialize calculator
         document.getElementById('calculate-btn').click();
     </script>
+
+<script>
+    // Cost Calculator functionality
+    document.getElementById('calculate-btn').addEventListener('click', function() {
+        const bidderCost = parseFloat(document.getElementById('bidder-cost').value) || 0;
+        const connectsCost = parseFloat(document.getElementById('connects-cost').value) || 0;
+        const devCost = parseFloat(document.getElementById('dev-cost').value) || 0;
+        
+        const totalCost = bidderCost + connectsCost + devCost;
+        document.getElementById('total-cost').textContent = '$' + totalCost.toFixed(2);
+    });
+    
+    // Initialize calculator
+    document.getElementById('calculate-btn').click();
+</script>
 </body>
 </html>
+
 
 
 
