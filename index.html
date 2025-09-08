@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upwork Specialist - Professional Bidding & Sales Services | Win More Projects</title>
-    <meta name="description" content=" Upwork Specialist helps freelancers & agencies win more projects with professional bidding services, sales packages, and dedicated support. Get started today!">
+    <meta name="description" content="Upwork Specialist helps freelancers & agencies win more projects with professional bidding services, sales packages, and dedicated support. Get started today!">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💼</text></svg>">
@@ -66,28 +66,8 @@
             text-decoration: none;
         }
         
-        .logo-icon {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-right: 10px;
-        }
-        
-        .logo-text {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--secondary);
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo-text span {
-            color: var(--primary);
-        }
-        
-        .logo-dollar {
-            color: green;
-            margin: 0 5px;
-            font-weight: bold;
+        .logo-img {
+            height: 50px;
         }
         
         .top-contact {
@@ -216,10 +196,10 @@
             font-size: 1.1rem;
         }
         
-        /* Packages Section */
-        .packages {
+        /* Calculator Section */
+        .calculator {
             padding: 80px 0;
-            background-color: var(--light);
+            background-color: white;
         }
         
         .section-title {
@@ -237,6 +217,64 @@
             color: var(--gray);
             max-width: 700px;
             margin: 0 auto;
+        }
+        
+        .calculator-container {
+            background-color: var(--light);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .calculator-form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--light-gray);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+        }
+        
+        .calculator-result {
+            background-color: var(--primary);
+            color: white;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .calculator-result h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .total-cost {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 15px 0;
+        }
+        
+        /* Packages Section */
+        .packages {
+            padding: 80px 0;
+            background-color: var(--light);
         }
         
         .packages-container {
@@ -304,12 +342,14 @@
             margin-bottom: 10px;
             display: flex;
             align-items: flex-start;
+            line-height: 1.4;
         }
         
         .package-features li i {
             color: var(--primary);
             margin-right: 10px;
             margin-top: 5px;
+            flex-shrink: 0;
         }
         
         .package-for {
@@ -493,6 +533,7 @@
         .payment-image {
             height: 60px;
             margin-top: 20px;
+            object-fit: contain;
         }
         
         /* Footer */
@@ -673,6 +714,10 @@
                 width: 120px;
                 height: 60px;
             }
+            
+            .calculator-form {
+                grid-template-columns: 1fr;
+            }
         }
         
         @media (max-width: 576px) {
@@ -692,10 +737,6 @@
                 flex-direction: column;
                 gap: 30px;
             }
-            
-            .logo-text {
-                font-size: 1.5rem;
-            }
         }
         
         .top-contact-mobile {
@@ -712,16 +753,19 @@
             }
         }
         
-        .wordmark-logo {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--secondary);
-            display: flex;
-            align-items: center;
+        .logo-img {
+            height: 40px;
         }
         
-        .wordmark-logo span {
-            color: var(--primary);
+        @media (max-width: 768px) {
+            .logo-img {
+                height: 35px;
+            }
+        }
+        
+        .calendly-container {
+            margin-top: 50px;
+            text-align: center;
         }
     </style>
 </head>
@@ -735,8 +779,7 @@
     <header>
         <div class="container header-container">
             <a href="#" class="logo">
-                <div class="logo-icon"><i class="fas fa-dollar-sign"></i></div>
-                <div class="wordmark-logo">Upwork<span>Specialist</span></div>
+                <div class="logo-img" style="font-size: 24px; font-weight: bold; color: #14a800;">UPWORK<br><span style="color: #222;">SPECIALIST</span></div>
             </a>
             
             <div class="top-contact">
@@ -746,17 +789,13 @@
             <nav>
                 <ul id="menu">
                     <li><a href="#home">Home</a></li>
+                    <li><a href="#calculator">Calculator</a></li>
                     <li><a href="#packages">Packages</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#payment-methods">Payments</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-                
-                <div class="nav-buttons">
-                    <a href="#signin" class="btn btn-outline">Sign In</a>
-                    <a href="#signup" class="btn">Sign Up</a>
-                </div>
                 
                 <div class="mobile-menu-btn" id="menuToggle">
                     <i class="fas fa-bars"></i>
@@ -771,6 +810,53 @@
             <h1>Win More Upwork Projects with Expert Bidding</h1>
             <p>Professional bidding, sales, and closing services to help freelancers, agencies, and businesses succeed on Upwork. Our team of 100+ experts ensures high conversion rates and consistent project flow.</p>
             <a href="#packages" class="btn btn-large">View Our Packages</a>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="calculator" id="calculator">
+        <div class="container">
+            <div class="section-title">
+                <h2>Cost Calculator</h2>
+                <p>Calculate the total cost for our services based on your specific needs</p>
+            </div>
+            
+            <div class="calculator-container">
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label for="bidder-cost">Bidder Cost ($)</label>
+                        <input type="number" id="bidder-cost" min="0" value="200">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="connects-cost">Connects Cost ($)</label>
+                        <input type="number" id="connects-cost" min="0" value="50">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="dev-cost">Development/Design Cost ($)</label>
+                        <input type="number" id="dev-cost" min="0" value="300">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="package">Service Package</label>
+                        <select id="package">
+                            <option value="200">Startup Package ($200)</option>
+                            <option value="300">Professional Package ($300)</option>
+                            <option value="500">Agency Package ($500)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <button id="calculate-btn" class="btn" style="width: 100%;">Calculate Total Cost</button>
+                
+                <div class="calculator-result">
+                    <h3>Your Estimated Total Cost</h3>
+                    <div class="total-cost" id="total-cost">$0.00</div>
+                    <p>This includes all selected services and packages</p>
+                    <a href="#packages" class="btn btn-outline" style="background-color: transparent; border-color: white; color: white; margin-top: 15px;">View Packages</a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -795,7 +881,7 @@
                         <li><i class="fas fa-times"></i> No VPN provided</li>
                     </ul>
                     <div class="package-actions">
-                        <a href="#contact" class="btn">Book Appointment</a>
+                        <a href="https://calendly.com/akmalshafi368" class="btn">Book Appointment</a>
                         <a href="#contact" class="btn btn-outline">Order Now</a>
                     </div>
                     <div class="package-for">
@@ -819,7 +905,7 @@
                         <li><i class="fas fa-check"></i> 50% target guarantee</li>
                     </ul>
                     <div class="package-actions">
-                        <a href="#contact" class="btn">Book Appointment</a>
+                        <a href="https://calendly.com/akmalshafi368" class="btn">Book Appointment</a>
                         <a href="#contact" class="btn btn-outline">Order Now</a>
                     </div>
                     <div class="package-for">
@@ -842,7 +928,7 @@
                         <li><i class="fas fa-check"></i> VIP support</li>
                     </ul>
                     <div class="package-actions">
-                        <a href="#contact" class="btn">Book Appointment</a>
+                        <a href="https://calendly.com/akmalshafi368" class="btn">Book Appointment</a>
                         <a href="#contact" class="btn btn-outline">Order Now</a>
                     </div>
                     <div class="package-for">
@@ -850,6 +936,12 @@
                         <p>Agencies and businesses looking for comprehensive Upwork management</p>
                     </div>
                 </div>
+            </div>
+            
+            <div class="calendly-container">
+                <h3>Schedule a Consultation</h3>
+                <p>Book a meeting with us to discuss your Upwork strategy</p>
+                <a href="https://calendly.com/akmalshafi368" class="btn btn-large">Schedule on Calendly</a>
             </div>
         </div>
     </section>
@@ -955,7 +1047,9 @@
                     </div>
                     <h3>JazzCash</h3>
                     <p>Secure mobile payments through Pakistan's leading payment platform</p>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/JazzCash_Logo.png/320px-JazzCash_Logo.png" alt="JazzCash" class="payment-image">
+                    <div style="background:#C2A974; padding:10px; border-radius:8px; display:inline-block;">
+                        <span style="color:#0F4B9C; font-weight:bold; font-size:24px;">JazzCash</span>
+                    </div>
                 </div>
                 
                 <div class="payment-card">
@@ -964,7 +1058,9 @@
                     </div>
                     <h3>EasyPaisa</h3>
                     <p>Convenient digital wallet and payment solution for Pakistani customers</p>
-                    <img src="https://seeklogo.com/images/E/easypaisa-logo-7C399A2C7C-seeklogo.com.png" alt="EasyPaisa" class="payment-image">
+                    <div style="background:#E11C26; padding:10px; border-radius:8px; display:inline-block;">
+                        <span style="color:white; font-weight:bold; font-size:24px;">EasyPaisa</span>
+                    </div>
                 </div>
                 
                 <div class="payment-card">
@@ -1007,6 +1103,7 @@
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="#home">Home</a></li>
+                        <li><a href="#calculator">Calculator</a></li>
                         <li><a href="#packages">Packages</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#testimonials">Testimonials</a></li>
@@ -1057,7 +1154,22 @@
                 }
             });
         });
+        
+        // Cost Calculator functionality
+        document.getElementById('calculate-btn').addEventListener('click', function() {
+            const bidderCost = parseFloat(document.getElementById('bidder-cost').value) || 0;
+            const connectsCost = parseFloat(document.getElementById('connects-cost').value) || 0;
+            const devCost = parseFloat(document.getElementById('dev-cost').value) || 0;
+            
+            const packageSelect = document.getElementById('package');
+            const packageCost = parseFloat(packageSelect.value) || 0;
+            
+            const totalCost = bidderCost + connectsCost + devCost + packageCost;
+            document.getElementById('total-cost').textContent = '$' + totalCost.toFixed(2);
+        });
+        
+        // Initialize calculator
+        document.getElementById('calculate-btn').click();
     </script>
 </body>
 </html>
-
