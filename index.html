@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💼</text></svg>">
-
     <style>
         :root {
             --primary: #14a800;
@@ -68,8 +67,20 @@
         }
         
         .logo-img {
-            height: 150px;
-            width:200px;
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        .logo-img span {
+            color: var(--secondary);
+        }
+        
+        .logo-img i {
+            margin-right: 10px;
+            font-size: 28px;
         }
         
         .top-contact {
@@ -120,11 +131,6 @@
         
         nav ul li a:hover:after {
             width: 100%;
-        }
-        
-        .nav-buttons {
-            display: flex;
-            gap: 15px;
         }
         
         .btn {
@@ -182,7 +188,7 @@
         }
         
         .hero h1 {
-            font-size: 3rem;
+            font-size: 2.8rem;
             margin-bottom: 20px;
             line-height: 1.2;
         }
@@ -245,7 +251,7 @@
             font-weight: 500;
         }
         
-        .form-group input, .form-group select {
+        .form-group input {
             width: 100%;
             padding: 12px 15px;
             border: 1px solid var(--light-gray);
@@ -385,7 +391,7 @@
         
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
         }
         
@@ -467,27 +473,23 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 40px;
+            gap: 30px;
             margin-top: 50px;
         }
         
         .client-logo {
-            transition: var(--transition);
-            width: 150px;
-            height: 80px;
-            object-fit: contain;
-            filter: grayscale(100%);
-            opacity: 0.7;
-            padding: 15px;
             background: white;
-            border-radius: 8px;
+            padding: 15px 25px;
+            border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
+            font-weight: 600;
+            color: var(--gray);
+            transition: var(--transition);
         }
         
         .client-logo:hover {
-            opacity: 1;
-            filter: grayscale(0%);
-            transform: scale(1.05);
+            color: var(--primary);
+            transform: translateY(-5px);
         }
         
         /* Payment Methods */
@@ -532,35 +534,38 @@
             margin-bottom: 20px;
         }
         
-        .payment-image {
-            height: 60px;
-            margin-top: 20px;
-            object-fit: contain;
+        .payment-badge {
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 15px;
         }
         
         /* Footer */
         footer {
             background-color: var(--secondary);
             color: white;
-            padding: 50px 0 20px;
+            padding: 60px 0 20px;
         }
         
         .footer-content {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
-            justify-content: space-between;
             margin-bottom: 30px;
-        }
-        
-        .footer-column {
-            flex: 1;
-            min-width: 250px;
         }
         
         .footer-column h3 {
             margin-bottom: 20px;
             font-size: 1.3rem;
+            color: white;
+        }
+        
+        .footer-column p {
+            color: #ddd;
+            margin-bottom: 20px;
+            line-height: 1.6;
         }
         
         .footer-column ul {
@@ -568,27 +573,37 @@
         }
         
         .footer-column ul li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
         
         .footer-column ul li a {
             color: #ddd;
             text-decoration: none;
             transition: var(--transition);
+            display: flex;
+            align-items: center;
         }
         
         .footer-column ul li a:hover {
             color: var(--primary);
+            transform: translateX(5px);
+        }
+        
+        .footer-column ul li a i {
+            margin-right: 10px;
+            width: 20px;
         }
         
         .contact-info li {
             display: flex;
             align-items: center;
+            margin-bottom: 15px;
         }
         
         .contact-info li i {
-            margin-right: 10px;
+            margin-right: 12px;
             color: var(--primary);
+            width: 20px;
         }
         
         .social-icons {
@@ -612,11 +627,12 @@
         
         .social-icon:hover {
             background-color: var(--primary);
+            transform: translateY(-3px);
         }
         
         .copyright {
             text-align: center;
-            padding-top: 20px;
+            padding-top: 30px;
             border-top: 1px solid rgba(255,255,255,0.1);
             font-size: 0.9rem;
             color: #aaa;
@@ -625,11 +641,11 @@
         /* Responsive Styles */
         @media (max-width: 992px) {
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.3rem;
             }
             
             .section-title h2 {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
             
             .top-contact {
@@ -640,7 +656,7 @@
         
         @media (max-width: 768px) {
             .header-container {
-                padding: 15px 20px;
+                padding: 15px 0;
             }
             
             .top-contact {
@@ -673,19 +689,19 @@
             }
             
             nav ul li {
-                margin: 10px 0;
-            }
-            
-            .nav-buttons {
-                display: none;
+                margin: 12px 0;
             }
             
             .mobile-menu-btn {
                 display: block;
             }
             
+            .hero {
+                padding: 80px 0;
+            }
+            
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
             
             .hero p {
@@ -693,7 +709,7 @@
             }
             
             .section-title h2 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
             
             .package-card {
@@ -713,12 +729,17 @@
             }
             
             .client-logo {
-                width: 120px;
-                height: 60px;
+                padding: 12px 20px;
+                font-size: 0.9rem;
             }
             
             .calculator-form {
                 grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
             }
         }
         
@@ -732,12 +753,15 @@
             }
             
             .section-title h2 {
-                font-size: 1.8rem;
+                font-size: 1.7rem;
             }
             
-            .footer-content {
-                flex-direction: column;
-                gap: 30px;
+            .logo-img {
+                font-size: 20px;
+            }
+            
+            .logo-img i {
+                font-size: 24px;
             }
         }
         
@@ -755,37 +779,29 @@
             }
         }
         
-        .logo-img {
-            height: 100px;
+        .calendly-container {
+            margin-top: 50px;
+            text-align: center;
         }
-        
-        @media (max-width: 768px) {
-            .logo-img {
-                height: 35px;
-            }
-        }
-        
-    .calendly-container {
-    margin-top: 50px;
-    text-align: center;
- }
     </style>
 </head>
 <body>
     <!-- Top Contact Bar -->
     <div class="top-contact-mobile">
-        <a href="https://wa.me/923132491389" target="_blank">
-  <i class="fab fa-whatsapp"></i> +92 313 2491389
-</a>
+        <a href="https://wa.me/923132491389" target="_blank" style="color: white; text-decoration: none;">
+            <i class="fab fa-whatsapp"></i> +92 313 2491389
+        </a>
     </div>
 
     <!-- Header -->
     <header>
         <div class="container header-container">
-           <div class="logo-img" style="font-size: 24px; font-weight: bold; color: #14a800;">
-        <i class="fa-solid fa-circle-check" style="color: #14a800;"></i> UPWORK<br>
-        <span style="color: #222;">SPECIALIST</span>
-    </div>
+            <a href="#" class="logo">
+                <div class="logo-img">
+                    <i class="fa-solid fa-rocket"></i>
+                    <div>UPWORK<br><span>SPECIALIST</span></div>
+                </div>
+            </a>
             
             <div class="top-contact">
                 <i class="fas fa-phone"></i> +92 313 2491389
@@ -812,134 +828,137 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
-            <h1>Win More Upwork Projects with Expert Bidding</h1>
-            <p>Professional bidding, sales, and closing services to help freelancers, agencies, and businesses succeed on Upwork. Our team of 100+ experts ensures high conversion rates and consistent project flow.</p>
-            <a href="#packages" class="btn btn-large">View Our Packages</a>
+            <h1>Win More Upwork Projects with Expert Bidding Services</h1>
+            <p>Our team of 100+ Upwork specialists helps freelancers and agencies secure high-value projects through professional proposals, optimized profiles, and strategic bidding.</p>
+            <a href="#packages" class="btn btn-large">Explore Our Packages</a>
         </div>
     </section>
 
     <!-- Calculator Section -->
-<section class="calculator" id="calculator">
-    <div class="container">
-        <div class="section-title">
-            <h2>Cost Calculator</h2>
-            <p>Calculate the total cost for our services based on your specific needs</p>
-        </div>
-        
-        <div class="calculator-container">
-            <div class="calculator-form">
-                <div class="form-group">
-                    <label for="bidder-cost">Bidding Cost ($)</label>
-                    <input type="number" id="bidder-cost" min="0" value="200">
-                </div>
-                
-                <div class="form-group">
-                    <label for="connects-cost">Connects Cost ($)</label>
-                    <input type="number" id="connects-cost" min="0" value="50">
-                </div>
-                
-                <div class="form-group">
-                    <label for="dev-cost">Development/Design Cost ($)</label>
-                    <input type="number" id="dev-cost" min="0" value="300">
-                </div>
+    <section class="calculator" id="calculator">
+        <div class="container">
+            <div class="section-title">
+                <h2>Project Cost Calculator</h2>
+                <p>Estimate your investment for our premium Upwork bidding services</p>
             </div>
             
-            <button id="calculate-btn" class="btn" style="width: 100%;">Calculate Total Cost</button>
-            
-            <div class="calculator-result">
-                <h3>Your Estimated Total Cost</h3>
-                <div class="total-cost" id="total-cost">$0.00</div>
-                <p>This includes all selected services</p>
-                <a href="#packages" class="btn btn-outline" style="background-color: transparent; border-color: white; color: white; margin-top: 15px;">View Packages</a>
+            <div class="calculator-container">
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label for="bidder-cost"><i class="fas fa-user-tie"></i> Bidding Service Cost ($)</label>
+                        <input type="number" id="bidder-cost" min="0" value="200" placeholder="Enter bidding cost">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="connects-cost"><i class="fas fa-link"></i> Connects Package Cost ($)</label>
+                        <input type="number" id="connects-cost" min="0" value="50" placeholder="Enter connects cost">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="dev-cost"><i class="fas fa-laptop-code"></i> Profile Optimization Cost ($)</label>
+                        <input type="number" id="dev-cost" min="0" value="300" placeholder="Enter optimization cost">
+                    </div>
+                </div>
+                
+                <button id="calculate-btn" class="btn" style="width: 100%;">
+                    <i class="fas fa-calculator"></i> Calculate Total Cost
+                </button>
+                
+                <div class="calculator-result">
+                    <h3>Your Estimated Total Investment</h3>
+                    <div class="total-cost" id="total-cost">$0.00</div>
+                    <p>Complete package including all selected services</p>
+                    <a href="#packages" class="btn btn-outline" style="background-color: transparent; border-color: white; color: white; margin-top: 15px;">
+                        View Package Details
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Packages Section -->
     <section class="packages" id="packages">
         <div class="container">
             <div class="section-title">
-                <h2>Our Service Packages</h2>
-                <p>Choose the package that best fits your needs and start winning more projects on Upwork</p>
+                <h2>Strategic Upwork Packages</h2>
+                <p>Select the perfect package to accelerate your freelancing success on Upwork</p>
             </div>
             
             <div class="packages-container">
                 <!-- Package 1 -->
                 <div class="package-card">
-                    <div class="package-name">Startup Package</div>
+                    <div class="package-name"><i class="fas fa-seedling"></i> Startup Package</div>
                     <div class="package-price">$200</div>
                     <ul class="package-features">
-                        <li><i class="fas fa-check"></i> Basic bidder service</li>
+                        <li><i class="fas fa-check"></i> Professional proposal writing</li>
                         <li><i class="fas fa-check"></i> Connects management</li>
-                        <li><i class="fas fa-check"></i> Standard project delivery</li>
+                        <li><i class="fas fa-check"></i> Basic profile optimization</li>
                         <li><i class="fas fa-check"></i> Expected sales: $1,500 - $2,000/month</li>
                         <li><i class="fas fa-times"></i> No VPN provided</li>
                     </ul>
-<div class="package-actions">
-    <br/>
-    <a href="https://calendly.com/akmalshafi368" class="btn">Book Appointment</a>
-                        <a href="#contact" class="btn btn-outline">Order Now</a>
+                    <div class="package-actions">
+                        <a href="https://calendly.com/akmalshafi368" class="btn"><i class="fas fa-calendar-check"></i> Book Consultation</a>
+                        <a href="#contact" class="btn btn-outline"><i class="fas fa-shopping-cart"></i> Get Started</a>
                     </div>
                     <div class="package-for">
-                        <h4>Best For:</h4>
-                        <p>Freelancers new to Upwork who need help winning their first projects</p>
+                        <h4><i class="fas fa-user"></i> Ideal For:</h4>
+                        <p>New freelancers launching their Upwork journey</p>
                     </div>
                 </div>
                 
                 <!-- Package 2 -->
                 <div class="package-card popular">
                     <div class="popular-tag">POPULAR</div>
-                    <div class="package-name">Professional Package</div>
+                    <div class="package-name"><i class="fas fa-chart-line"></i> Professional Package</div>
                     <div class="package-price">$300</div>
                     <ul class="package-features">
-                        <li><i class="fas fa-check"></i> All Startup features included</li>
-                        <li><i class="fas fa-check"></i> Enhanced bidder service</li>
+                        <li><i class="fas fa-check"></i> All Startup features</li>
+                        <li><i class="fas fa-check"></i> Enhanced proposal strategies</li>
                         <li><i class="fas fa-check"></i> Priority connects management</li>
                         <li><i class="fas fa-check"></i> Dedicated account manager</li>
-                        <li><i class="fas fa-check"></i> Monthly performance reports</li>
-                        <li><i class="fas fa-check"></i> VPN provided</li>
+                        <li><i class="fas fa-check"></i> Performance analytics</li>
+                        <li><i class="fas fa-check"></i> VPN included</li>
                         <li><i class="fas fa-check"></i> Expected sales: $1,500 - $3,000/month</li>
-                        <li><i class="fas fa-check"></i> 50% target guarantee</li>
+                        <li><i class="fas fa-check"></i> 50% conversion guarantee</li>
                     </ul>
                     <div class="package-actions">
-                        <a href="https://calendly.com/akmalshafi368" class="btn">Book Appointment</a>
-                        <a href="#contact" class="btn btn-outline">Order Now</a>
+                        <a href="https://calendly.com/akmalshafi368" class="btn"><i class="fas fa-calendar-check"></i> Book Consultation</a>
+                        <a href="#contact" class="btn btn-outline"><i class="fas fa-shopping-cart"></i> Get Started</a>
                     </div>
                     <div class="package-for">
-                        <h4>Best For:</h4>
-                        <p>Freelancers or agencies looking to scale and land high-value projects</p>
+                        <h4><i class="fas fa-briefcase"></i> Ideal For:</h4>
+                        <p>Established freelancers scaling their business</p>
                     </div>
                 </div>
                 
                 <!-- Package 3 -->
                 <div class="package-card">
-                    <div class="package-name">Agency Package</div>
+                    <div class="package-name"><i class="fas fa-building"></i> Agency Package</div>
                     <div class="package-price">$500</div>
                     <ul class="package-features">
-                        <li><i class="fas fa-check"></i> All Professional features included</li>
-                        <li><i class="fas fa-check"></i> Advanced bidder service</li>
+                        <li><i class="fas fa-check"></i> All Professional features</li>
+                        <li><i class="fas fa-check"></i> Advanced bidding strategies</li>
                         <li><i class="fas fa-check"></i> Comprehensive project management</li>
-                        <li><i class="fas fa-check"></i> Proactive strategy and market analysis</li>
-                        <li><i class="fas fa-check"></i> Team of specialists</li>
+                        <li><i class="fas fa-check"></i> Market analysis & strategy</li>
+                        <li><i class="fas fa-check"></i> Multi-specialist team</li>
                         <li><i class="fas fa-check"></i> Expected sales: $3,000 - $5,000/month</li>
-                        <li><i class="fas fa-check"></i> VIP support</li>
+                        <li><i class="fas fa-check"></i> VIP priority support</li>
                     </ul>
                     <div class="package-actions">
-                        <a href="https://calendly.com/akmalshafi368" class="btn">Book Appointment</a>
-                        <a href="#contact" class="btn btn-outline">Order Now</a>
+                        <a href="https://calendly.com/akmalshafi368" class="btn"><i class="fas fa-calendar-check"></i> Book Consultation</a>
+                        <a href="#contact" class="btn btn-outline"><i class="fas fa-shopping-cart"></i> Get Started</a>
                     </div>
                     <div class="package-for">
-                        <h4>Best For:</h4>
-                        <p>Agencies and businesses looking for comprehensive Upwork management</p>
+                        <h4><i class="fas fa-users"></i> Ideal For:</h4>
+                        <p>Agencies and teams managing multiple accounts</p>
                     </div>
                 </div>
             </div>
             
             <div class="calendly-container">
-                <h3>Schedule a Consultation</h3>
-                <p>Book a meeting with us to discuss your Upwork strategy</p>
-                <a href="https://calendly.com/akmalshafi368" class="btn btn-large">Schedule on Calendly</a>
+                <h3>Schedule a Free Strategy Session</h3>
+                <p>Discuss your Upwork goals with our experts</p>
+                <a href="https://calendly.com/akmalshafi368" class="btn btn-large"><i class="fas fa-video"></i> Book Free Consultation</a>
             </div>
         </div>
     </section>
@@ -948,8 +967,8 @@
     <section class="additional-services" id="services">
         <div class="container">
             <div class="section-title">
-                <h2>Additional Services</h2>
-                <p>Enhance your package with these additional services</p>
+                <h2>Premium Add-On Services</h2>
+                <p>Enhance your package with these specialized services</p>
             </div>
             
             <div class="services-grid">
@@ -957,11 +976,11 @@
                     <div class="service-icon">
                         <i class="fas fa-headset"></i>
                     </div>
-                    <h3>Front Sales Agent</h3>
-                    <p>Professional client communication and deal closing</p>
+                    <h3>Client Communication</h3>
+                    <p>Professional client outreach and negotiation services</p>
                     <div class="service-price">$150</div>
                     <div class="service-actions">
-                        <a href="https://wa.me/923132491389?text=Hi,%20I'm%20interested%20in%20Front%20Sales%20Agent%20service" class="btn btn-whatsapp">Call on WhatsApp</a>
+                        <a href="https://wa.me/923132491389?text=Hi,%20I'm%20interested%20in%20Client%20Communication%20service" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Contact via WhatsApp</a>
                     </div>
                 </div>
                 
@@ -969,11 +988,11 @@
                     <div class="service-icon">
                         <i class="fas fa-bullhorn"></i>
                     </div>
-                    <h3>Digital Marketing</h3>
-                    <p>Boost your visibility and attract more clients</p>
+                    <h3>Profile Marketing</h3>
+                    <p>Boost your visibility and attract premium clients</p>
                     <div class="service-price">$200</div>
                     <div class="service-actions">
-                        <a href="https://wa.me/923132491389?text=Hi,%20I'm%20interested%20in%20Digital%20Marketing%20service" class="btn btn-whatsapp">Call on WhatsApp</a>
+                        <a href="https://wa.me/923132491389?text=Hi,%20I'm%20interested%20in%20Profile%20Marketing%20service" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Contact via WhatsApp</a>
                     </div>
                 </div>
                 
@@ -981,11 +1000,11 @@
                     <div class="service-icon">
                         <i class="fas fa-building"></i>
                     </div>
-                    <h3>LLC/LTD Registration</h3>
-                    <p>Legal business registration services</p>
+                    <h3>Business Registration</h3>
+                    <p>LLC/LTD registration for professional presence</p>
                     <div class="service-price">$300</div>
                     <div class="service-actions">
-                        <a href="https://wa.me/923132491389?text=Hi,%20I'm%20interested%20in%20LLC/LTD%20Registration%20service" class="btn btn-whatsapp">Call on WhatsApp</a>
+                        <a href="https://wa.me/923132491389?text=Hi,%20I'm%20interested%20in%20Business%20Registration%20service" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Contact via WhatsApp</a>
                     </div>
                 </div>
                 
@@ -993,11 +1012,11 @@
                     <div class="service-icon">
                         <i class="fas fa-phone"></i>
                     </div>
-                    <h3>Cold Calling</h3>
-                    <p>Proactive client acquisition through calls</p>
+                    <h3>Lead Generation</h3>
+                    <p>Proactive client acquisition through targeted outreach</p>
                     <div class="service-price">$250</div>
                     <div class="service-actions">
-                        <a href="https://wa.me/923132491389?text=Hi,%20I'm%20interested%20in%20Cold%20Calling%20service" class="btn btn-whatsapp">Call on WhatsApp</a>
+                        <a href="https://wa.me/923132491389?text=Hi,%20I'm%20interested%20in%20Lead%20Generation%20service" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Contact via WhatsApp</a>
                     </div>
                 </div>
             </div>
@@ -1008,24 +1027,24 @@
     <section class="testimonials" id="testimonials">
         <div class="container">
             <div class="section-title">
-                <h2>What Our Clients Say</h2>
-                <p>Hear from freelancers and agencies who have succeeded with our services</p>
+                <h2>Client Success Stories</h2>
+                <p>See how our clients transformed their Upwork presence</p>
             </div>
             
             <div class="testimonials-container">
                 <div class="testimonial">
-                    <p class="testimonial-text">"Upwork Specialist transformed my freelance business. I went from struggling to find clients to having a consistent flow of high-paying projects within just one month!"</p>
+                    <p class="testimonial-text">"Upwork Specialist completely transformed my freelance business. I went from struggling to find clients to having a consistent flow of high-paying projects within just one month! Their proposal strategies are unmatched."</p>
                     <p class="testimonial-author">Sarah Johnson</p>
                     <p class="testimonial-role">Freelance Graphic Designer</p>
                 </div>
             </div>
             
             <div class="clients-slider">
-    <h3 class="client-logo">Tayyab & Co.</h3>
-    <h3 class="client-logo">GPA Consultancy</h3>
-    <h3 class="client-logo">BKR International</h3>
-    <h3 class="client-logo">PKF Global</h3>
-</div>
+                <div class="client-logo">Tayyab & Co.</div>
+                <div class="client-logo">GPA Consultancy</div>
+                <div class="client-logo">BKR International</div>
+                <div class="client-logo">PKF Global</div>
+            </div>
         </div>
     </section>
 
@@ -1033,8 +1052,8 @@
     <section class="payment-methods" id="payment-methods">
         <div class="container">
             <div class="section-title">
-                <h2>Secure Payment Methods</h2>
-                <p>We offer multiple secure payment options for your convenience</p>
+                <h2>Secure Payment Options</h2>
+                <p>We offer multiple convenient and secure payment methods</p>
             </div>
             
             <div class="payment-grid">
@@ -1043,10 +1062,8 @@
                         <i class="fas fa-mobile-alt"></i>
                     </div>
                     <h3>JazzCash</h3>
-                    <p>Secure mobile payments through Pakistan's leading payment platform</p>
-                    <div style="background:#C2A974; padding:10px; border-radius:8px; display:inline-block;">
-                        <span style="color:#0F4B9C; font-weight:bold; font-size:24px;">JazzCash</span>
-                    </div>
+                    <p>Secure mobile payments through Pakistan's leading payment platform with instant processing</p>
+                    <div class="payment-badge" style="background:#C2A974; color:#0F4B9C;">JazzCash</div>
                 </div>
                 
                 <div class="payment-card">
@@ -1054,10 +1071,8 @@
                         <i class="fas fa-wallet"></i>
                     </div>
                     <h3>EasyPaisa</h3>
-                    <p>Convenient digital wallet and payment solution for Pakistani customers</p>
-                    <div style="background:#E11C26; padding:10px; border-radius:8px; display:inline-block;">
-                        <span style="color:white; font-weight:bold; font-size:24px;">EasyPaisa</span>
-                    </div>
+                    <p>Convenient digital wallet and payment solution for Pakistani customers with wide accessibility</p>
+                    <div class="payment-badge" style="background:#E11C26; color:white;">EasyPaisa</div>
                 </div>
                 
                 <div class="payment-card">
@@ -1065,8 +1080,8 @@
                         <i class="fas fa-university"></i>
                     </div>
                     <h3>Bank Transfer</h3>
-                    <p>Direct bank transfers from all major Pakistani and international banks</p>
-                    <img src="https://cdn-icons-png.flaticon.com/512/2555/2555284.png" alt="Bank Transfer" class="payment-image">
+                    <p>Direct bank transfers from all major Pakistani and international banks with complete security</p>
+                    <div class="payment-badge" style="background:#0F4B9C; color:white;">Bank Transfer</div>
                 </div>
                 
                 <div class="payment-card">
@@ -1074,8 +1089,8 @@
                         <i class="fab fa-paypal"></i>
                     </div>
                     <h3>PayPal</h3>
-                    <p>International payments through the world's most trusted payment gateway</p>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/2560px-PayPal.svg.png" alt="PayPal" class="payment-image">
+                    <p>International payments through the world's most trusted payment gateway with buyer protection</p>
+                    <div class="payment-badge" style="background:#003087; color:white;">PayPal</div>
                 </div>
             </div>
         </div>
@@ -1086,8 +1101,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>Upwork Specialist</h3>
-                    <p>Helping freelancers, agencies, and businesses succeed on Upwork with professional bidding and sales services.</p>
+                    <h3><i class="fas fa-rocket"></i> Upwork Specialist</h3>
+                    <p>Helping freelancers, agencies, and businesses succeed on Upwork with professional bidding strategies, profile optimization, and client acquisition services since 2020.</p>
                     <div class="social-icons">
                         <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
@@ -1097,30 +1112,40 @@
                 </div>
                 
                 <div class="footer-column">
-                    <h3>Quick Links</h3>
+                    <h3><i class="fas fa-link"></i> Quick Links</h3>
                     <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#calculator">Calculator</a></li>
-                        <li><a href="#packages">Packages</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#testimonials">Testimonials</a></li>
-                        <li><a href="#payment-methods">Payments</a></li>
+                        <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="#calculator"><i class="fas fa-calculator"></i> Cost Calculator</a></li>
+                        <li><a href="#packages"><i class="fas fa-box"></i> Service Packages</a></li>
+                        <li><a href="#services"><i class="fas fa-cogs"></i> Additional Services</a></li>
+                        <li><a href="#testimonials"><i class="fas fa-star"></i> Client Testimonials</a></li>
+                        <li><a href="#payment-methods"><i class="fas fa-credit-card"></i> Payment Methods</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
-                    <h3>Contact Us</h3>
+                    <h3><i class="fas fa-envelope"></i> Contact Info</h3>
                     <ul class="contact-info">
                         <li><i class="fas fa-phone"></i> +92 313 2491389</li>
                         <li><i class="fab fa-whatsapp"></i> WhatsApp: +92 313 2491389</li>
                         <li><i class="fas fa-envelope"></i> info@upworkspecialist.com</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Remote Team - Worldwide</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Remote Team - Worldwide Service</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3><i class="fas fa-clock"></i> Business Hours</h3>
+                    <ul>
+                        <li><i class="fas fa-calendar-day"></i> Monday - Friday: 9AM - 6PM</li>
+                        <li><i class="fas fa-calendar-day"></i> Saturday: 10AM - 4PM</li>
+                        <li><i class="fas fa-calendar-day"></i> Sunday: Closed</li>
+                        <li><i class="fas fa-globe"></i> PST Time Zone</li>
                     </ul>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 Upwork Specialist. All rights reserved.</p>
+                <p>&copy; 2023 Upwork Specialist. All rights reserved. | Designed for Freelancers & Agencies</p>
             </div>
         </div>
     </footer>
@@ -1158,46 +1183,12 @@
             const connectsCost = parseFloat(document.getElementById('connects-cost').value) || 0;
             const devCost = parseFloat(document.getElementById('dev-cost').value) || 0;
             
-            const packageSelect = document.getElementById('package');
-            const packageCost = parseFloat(packageSelect.value) || 0;
-            
-            const totalCost = bidderCost + connectsCost + devCost + packageCost;
+            const totalCost = bidderCost + connectsCost + devCost;
             document.getElementById('total-cost').textContent = '$' + totalCost.toFixed(2);
         });
         
         // Initialize calculator
         document.getElementById('calculate-btn').click();
     </script>
-
-<script>
-    // Cost Calculator functionality
-    document.getElementById('calculate-btn').addEventListener('click', function() {
-        const bidderCost = parseFloat(document.getElementById('bidder-cost').value) || 0;
-        const connectsCost = parseFloat(document.getElementById('connects-cost').value) || 0;
-        const devCost = parseFloat(document.getElementById('dev-cost').value) || 0;
-        
-        const totalCost = bidderCost + connectsCost + devCost;
-        document.getElementById('total-cost').textContent = '$' + totalCost.toFixed(2);
-    });
-    
-    // Initialize calculator
-    document.getElementById('calculate-btn').click();
-</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
