@@ -817,51 +817,42 @@
     </section>
 
     <!-- Calculator Section -->
-    <section class="calculator" id="calculator">
-        <div class="container">
-            <div class="section-title">
-                <h2>Cost Calculator</h2>
-                <p>Calculate the total cost for our services based on your specific needs</p>
+<section class="calculator" id="calculator">
+    <div class="container">
+        <div class="section-title">
+            <h2>Cost Calculator</h2>
+            <p>Calculate the total cost for our services based on your specific needs</p>
+        </div>
+        
+        <div class="calculator-container">
+            <div class="calculator-form">
+                <div class="form-group">
+                    <label for="bidder-cost">Bidder Cost ($)</label>
+                    <input type="number" id="bidder-cost" min="0" value="200">
+                </div>
+                
+                <div class="form-group">
+                    <label for="connects-cost">Connects Cost ($)</label>
+                    <input type="number" id="connects-cost" min="0" value="50">
+                </div>
+                
+                <div class="form-group">
+                    <label for="dev-cost">Development/Design Cost ($)</label>
+                    <input type="number" id="dev-cost" min="0" value="300">
+                </div>
             </div>
             
-            <div class="calculator-container">
-                <div class="calculator-form">
-                    <div class="form-group">
-                        <label for="bidder-cost">Bidder Cost ($)</label>
-                        <input type="number" id="bidder-cost" min="0" value="200">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="connects-cost">Connects Cost ($)</label>
-                        <input type="number" id="connects-cost" min="0" value="50">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="dev-cost">Development/Design Cost ($)</label>
-                        <input type="number" id="dev-cost" min="0" value="300">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="package">Service Package</label>
-                        <select id="package">
-                            <option value="200">Startup Package ($200)</option>
-                            <option value="300">Professional Package ($300)</option>
-                            <option value="500">Agency Package ($500)</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <button id="calculate-btn" class="btn" style="width: 100%;">Calculate Total Cost</button>
-                
-                <div class="calculator-result">
-                    <h3>Your Estimated Total Cost</h3>
-                    <div class="total-cost" id="total-cost">$0.00</div>
-                    <p>This includes all selected services and packages</p>
-                    <a href="#packages" class="btn btn-outline" style="background-color: transparent; border-color: white; color: white; margin-top: 15px;">View Packages</a>
-                </div>
+            <button id="calculate-btn" class="btn" style="width: 100%;">Calculate Total Cost</button>
+            
+            <div class="calculator-result">
+                <h3>Your Estimated Total Cost</h3>
+                <div class="total-cost" id="total-cost">$0.00</div>
+                <p>This includes all selected services</p>
+                <a href="#packages" class="btn btn-outline" style="background-color: transparent; border-color: white; color: white; margin-top: 15px;">View Packages</a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Packages Section -->
     <section class="packages" id="packages">
@@ -1176,6 +1167,7 @@
     </script>
 </body>
 </html>
+
 
 
 
